@@ -1,4 +1,4 @@
-toolchain/build.git                    7fea44a379d6700cdfe69bd1f166cad4be955cf7 Replace -march=atom with -march=x86-64 for better host compatibility
+toolchain/build.git                    75542e77b565c2af968e48c1b12b32f343d913ae Fix binutils-2.24 detection
 toolchain/gmp.git                      e6b9669dafc6a5f83c80b4b4176359b78bccdc90 Add gmp-5.0.5.tar.bz2
 toolchain/mpfr.git                     bfcf1bfa38469208aaad8873cd4c68781061d90f add mpfr-3.1.1.tar.bz2
 toolchain/mpc.git                      835d16e92eed875638a8b5d552034c3b1aae045b add mpc-1.0.1.tar.gz
@@ -6,15 +6,16 @@ toolchain/cloog.git                    98972d5434ffcb4d11d2c81a46600e9a1cda9110 
 toolchain/isl.git                      b05d4572958c5d497da793f3317084bab90c3033 add isl-0.11.1.tar.bz2 needed by GCC 4.8 with graphite
 toolchain/ppl.git                      8ba1875b4c5341d902321761022a6d2a0b5b19a4 add ppl-1.0.tar.bz2
 toolchain/expat.git                    40172a0ae9d40a068f1e1a48ffcf6a1ccf765ed5 expat package for building gdb-7.3
-toolchain/binutils.git                 250ab64769fdb34c9ffebb94a8697f503747a2f8 Add MXU support to binutils-2.21/2.22/2.23
-toolchain/gcc.git                      7577ecda9609b61419f01b1bd4d8d5b0c2d3fbb1 [4.8] Fix ICE when building bullet library.
-toolchain/gdb.git                      2f1caff8ab3e6f7d34c8e58bd199ef518cfd2202 [7.3.x] Add one clue to find prebuilt python for Android platform debugging
-toolchain/python.git                   30bef47fac04bd5e99da7d09c8ed4260e1fbf09c Python 2.7.5: Regen configure and pyconfig.h.in
+toolchain/binutils.git                 e0bca373a85fa71b89d9ea42370433b3c0499b9d [2.24] fix MIPS static executable segfault
+toolchain/gcc.git                      5cd97bdbf2d97af4b0e4301f5f2b6c2a4301baf9 Merge "[4.6] Fix missing _U, _L, etc"
+toolchain/gdb.git                      f2bc219a53b01a6c7af0bbc564985dfda0173ca1 [7.3.x] Fix gdb print extreme fp number
+toolchain/python.git                   0d4194853e08d3244931523470331c00dfb94863 Fix python build inc_dirs[] and lib_dirs[] for linux/darwin
 toolchain/perl.git                     1121daca35c6c692602621eab28d4de19f0b347d Add -Dcc_as_ld to configure
-toolchain/mclinker.git                 2d1267fa5c4a47355c750a148a923bc09b7e55ad Add an option --enable-shrink-binary-size to configure.
-toolchain/clang.git (release_33)       8eb1ed98bd8f0bd623ddd1df7cdf7ef603fa989a Fix le32 linking issue by treating ".bc" as ".o".
-toolchain/llvm.git (release_33)        f6e133df89af8d022cc62437ba303424459e779d Make an llvm-config for cross-compilation
-toolchain/compiler-rt.git (release_33) 066cd5e4615399f4a70b9abaea699f1b62f394b5 Implement __sync_lock_test_and_set_4.
-toolchain/clang.git (release_32)       b5b990a56f1dbe4ddce609f2c9fad97a3274236a Fix le32 linking issue by treating ".bc" as ".o".
-toolchain/llvm.git (release_32)        b4e907cbd36364dba49752ec8fcda406535cc72a Make an llvm-config for cross-compilation
-toolchain/compiler-rt.git (release_32) bc84109786d158a454d671566721c2d139c3285c Add atomic helper functions for arm.
+toolchain/mclinker.git                 5fca8b9c9c671d6c01f428c00ca131e65042a9fd Merge upstream mclinker 2.7
+toolchain/yasm.git                     87c09baff80ca5bbe938392d8f320e621707f317 test commit
+toolchain/clang.git (release_34)       98b5404931ab99eb6468387b598527764370b133 [3.4] Add -fpic for aarch64-linux-android by default
+toolchain/llvm.git (release_34)        4e3e3137a7d3c271f5190ac9ef8af7848e5f67e2 Fix missing change for expandVAArg.
+toolchain/compiler-rt.git (release_34) b065fccd8ab47b4de4610093fb98514fc5df2362 Alias __aeabi_fcmpun to __unordsf2.
+toolchain/clang.git (release_33)       260f965f1273cd0aa8a1270885519df8e6317062 [ndk] Fix diagnostics for C-style cast to function type.
+toolchain/llvm.git (release_33)        8609a3469a8126eb6fb99ff65906bcc20c272d95 [ndk] Fix createBranchWeights() assertions.
+toolchain/compiler-rt.git (release_33) c880feaaa8829681a025d29a33704c18e21e87e1 Misc fixes for compiler_rt
